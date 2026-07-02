@@ -1,0 +1,42 @@
+# Example Databricks Unity Catalog Metric View (simplified YAML)
+# Users can export from Catalog Explorer or define these.
+# The skill should parse names, descriptions, expr, etc. and turn technical into friendly.
+
+metrics:
+  - name: total_revenue
+    description: "Sum of all order revenue before discounts and returns"
+    expr: "SUM(order_amount)"
+    data_type: decimal
+    format: currency
+
+  - name: net_revenue
+    description: "Revenue after returns and discounts"
+    expr: "SUM(order_amount) - SUM(discount_amount) - SUM(return_amount)"
+    data_type: decimal
+    format: currency
+
+  - name: order_count
+    description: "Number of completed customer orders"
+    expr: "COUNT(DISTINCT order_id)"
+    data_type: integer
+
+dimensions:
+  - name: order_date
+    description: "Date the order was placed"
+    expr: "order_date"
+    data_type: date
+
+  - name: product_category
+    description: "High level category of the product sold"
+    expr: "product.category"
+
+  - name: region
+    description: "Sales region or territory"
+
+filters:
+  - name: is_completed
+    expr: "status = 'completed'"
+
+# The skill translates this into plain English sections:
+# total_revenue -> "Total Revenue: The total dollar value of every order placed..."
+# etc.
