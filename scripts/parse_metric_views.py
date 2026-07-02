@@ -170,33 +170,6 @@ Version 0.1 (draft) | {date_str}
 
 {toc}
 
-## Preface
-
-### Introduction
-
-This guide explains the {layer_name} semantic layer in plain English. It translates governed metric and field definitions into language you can use in AI/BI Genie, dashboards, and reports.
-
-### About This Document
-
-This document describes the business meaning of each metric, field, and filter in the {layer_name} semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity.
-
-### Intended Audience
-
-This guide is intended for the following audiences:
-
-- Business analysts who need fast, accurate answers
-- Executives who want consistent metrics across the company
-- Anyone exploring governed data without filing a data request
-
-### Document Conventions
-
-This document uses the following typographical conventions:
-
-- **Bold** indicates a metric name, field name, or defined term at first use
-- Tables summarize metrics and glossary entries
-- Bulleted lists present related options or benefits
-- Numbered lists present sequences, procedures, or ranked examples
-
 ## Understanding the Semantic Layer
 
 ### Overview

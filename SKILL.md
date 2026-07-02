@@ -25,8 +25,8 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
 
 **Structure (Open Group Technical Publications Style Guide)**
 - Always start from `references/document-template.md` — do not invent a new outline.
-- Front matter: title page, version, Table of Contents, Preface (Introduction, About This Document, Intended Audience, Document Conventions).
-- Body chapters (H2): each with an **Overview** section (H3), except Preface, Glossary, and Getting Help.
+- Front matter: title page, version, and Table of Contents.
+- Body chapters (H2): each with an **Overview** section (H3), except Glossary and Getting Help.
 - Heading depth: H2 = chapters, H3 = sections, H4 = named sub-items only (e.g. individual fields). Never H5+.
 - Lists: always introduce with a complete lead-in phrase ending in a colon.
 - Tables: introduce with a sentence ending in a colon. Use for metric summaries and glossary.

@@ -5,7 +5,6 @@ import re
 from typing import Any
 
 CHAPTER_ORDER = [
-    "Preface",
     "Understanding the Semantic Layer",
     "Key Metrics",
     "Fields and Filters",
@@ -16,7 +15,6 @@ CHAPTER_ORDER = [
 ]
 
 CHAPTERS_SKIP_OVERVIEW = {
-    "preface",
     "table-of-contents",
     "glossary",
     "getting-help",

@@ -11,43 +11,13 @@ Version 1.0 | {{DATE}}
 
 ## Table of Contents
 
-1. Preface
-2. Understanding the Semantic Layer
-3. Key Metrics
-4. Fields and Filters
-5. Common Questions
-6. Using the Semantic Layer
-7. Glossary
-8. Getting Help
-
-## Preface
-
-### Introduction
-
-This guide explains the {{LAYER_NAME}} semantic layer in plain English. It translates governed metric and field definitions into language you can use in AI/BI Genie, dashboards, and reports. You do not need to know SQL, YAML, or data pipeline details to use this document.
-
-### About This Document
-
-This document describes the business meaning of each metric, field, and filter in the {{LAYER_NAME}} semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity, while keeping a friendly, benefit-focused tone.
-
-The body is organized into chapters. Each chapter covers one main topic. Sections use numbered headings. Lists are introduced with a lead-in phrase and a colon. Terms are defined on first use and collected in the Glossary.
-
-### Intended Audience
-
-This guide is intended for the following audiences:
-
-- {{AUDIENCE_1}}
-- {{AUDIENCE_2}}
-- {{AUDIENCE_3}}
-
-### Document Conventions
-
-This document uses the following typographical conventions:
-
-- **Bold** indicates a metric name, field name, or defined term at first use
-- Tables summarize metrics and glossary entries
-- Bulleted lists present related options or benefits
-- Numbered lists present sequences, procedures, or ranked examples
+1. Understanding the Semantic Layer
+2. Key Metrics
+3. Fields and Filters
+4. Common Questions
+5. Using the Semantic Layer
+6. Glossary
+7. Getting Help
 
 ## Understanding the Semantic Layer
 
