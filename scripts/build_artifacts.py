@@ -230,7 +230,7 @@ def build_html(
     replacements = {
         "{{TITLE}}": title,
         "{{LAYER_NAME}}": layer_name,
-        "{{TAGLINE}}": tagline or "User-friendly guide to your business metrics",
+        "{{TAGLINE}}": tagline or "Trusted metrics in plain English",
         "{{CONTENT}}": content_html,
         "{{SIDEBAR_TOC}}": sidebar_toc,
         "{{NAV_LINKS}}": nav_links,

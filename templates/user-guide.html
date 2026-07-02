@@ -145,33 +145,18 @@
 </head>
 <body class="bg-slate-50 text-slate-800">
   <header class="bg-white border-b sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-x-3">
-        <div class="w-9 h-9 bg-[#6B2D8F] rounded-xl flex items-center justify-center text-white font-bold text-xl tracking-tighter">S</div>
-        <div>
-          <div class="font-semibold text-xl tracking-tight">{{LAYER_NAME}}</div>
-          <div class="text-xs text-slate-500 -mt-0.5">Semantic Layer</div>
-        </div>
-      </div>
-      <div class="flex items-center gap-x-4 text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
+      <div class="font-semibold text-lg tracking-tight text-slate-900 shrink-0">{{LAYER_NAME}} Guide</div>
+      <div class="flex items-center gap-x-3 text-sm">
         {{NAV_LINKS}}
       </div>
-      <div class="text-xs px-3 py-1 bg-slate-100 rounded-full text-slate-500">Business User Guide • {{DATE}}</div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-6 pt-10 pb-20">
-    <!-- Title -->
-    <div class="mb-10">
-      <div class="inline-block px-4 py-1 bg-[#F3E8FF] text-[#6B2D8F] rounded-full text-sm font-medium mb-4">Trusted data for everyone</div>
-      <h1 class="font-display text-5xl tracking-tighter font-semibold text-slate-900">{{TITLE}}</h1>
-      <p class="mt-4 max-w-2xl text-xl text-slate-600">{{TAGLINE}}</p>
-    </div>
-
-    <!-- Quick summary / partner message -->
-    <div class="callout bg-white border border-slate-200 rounded-3xl p-8 mb-12">
-      <p class="text-lg">This guide helps you understand and use the numbers that drive decisions — without needing to be a data expert. Everything here is written in plain language.</p>
-      <div class="mt-3 text-sm text-[#6B2D8F]">Your single source of truth for {{LAYER_NAME}}.</div>
+  <main class="max-w-7xl mx-auto px-6 pt-8 pb-20">
+    <div class="mb-8">
+      <h1 class="font-display text-4xl tracking-tight font-semibold text-slate-900">{{TITLE}}</h1>
+      <p class="mt-2 text-base text-slate-600">{{TAGLINE}}</p>
     </div>
 
     <div class="doc-layout">
@@ -181,7 +166,7 @@
       <div class="doc-main">
         {{CONTENT}}
         <footer class="mt-16 pt-8 border-t text-sm text-slate-500 flex items-center justify-between">
-          <div>Generated for business users • Structured per The Open Group Technical Publications Style Guide</div>
+          <div>Business user guide • {{DATE}}</div>
           <div>© {{YEAR}}</div>
         </footer>
       </div>
