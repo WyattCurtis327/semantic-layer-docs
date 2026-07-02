@@ -14,12 +14,47 @@
     .metric-card { transition: transform .1s ease, box-shadow .1s ease; }
     .metric-card:hover { transform: translateY(-1px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05); }
     .nav-active { border-bottom: 3px solid #6B2D8F; font-weight: 600; }
-    .doc-section { scroll-margin-top: 80px; }
+    .doc-section { scroll-margin-top: 96px; }
+    html { scroll-behavior: smooth; }
     .friendly { color: #0f172a; }
     table { border-collapse: collapse; }
     th, td { border: 1px solid #e2e8f0; }
     .toc a:hover { color: #6B2D8F; }
     .callout { border-left: 4px solid #6B2D8F; }
+    .doc-content ul {
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 1.75rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .doc-content ul > li {
+      display: list-item;
+      padding-left: 0.25rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.6;
+    }
+    .doc-content ol {
+      list-style-type: decimal;
+      list-style-position: outside;
+      padding-left: 1.75rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .doc-content ol > li {
+      display: list-item;
+      padding-left: 0.25rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.6;
+    }
+    .doc-content h2, .doc-content h3, .doc-content h4 { font-family: 'Space Grotesk', sans-serif; }
+    .doc-content strong { color: #0f172a; font-weight: 600; }
+    .doc-content .toc-list a.toc-link {
+      color: #6B2D8F;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .doc-content .toc-list a.toc-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -33,11 +68,7 @@
         </div>
       </div>
       <div class="flex items-center gap-x-4 text-sm">
-        <a href="#overview" class="hover:text-[#6B2D8F] px-3 py-1.5">Overview</a>
-        <a href="#metrics" class="hover:text-[#6B2D8F] px-3 py-1.5">Metrics</a>
-        <a href="#dimensions" class="hover:text-[#6B2D8F] px-3 py-1.5">Dimensions</a>
-        <a href="#questions" class="hover:text-[#6B2D8F] px-3 py-1.5">Examples</a>
-        <a href="#glossary" class="hover:text-[#6B2D8F] px-3 py-1.5">Glossary</a>
+        {{NAV_LINKS}}
       </div>
       <div class="text-xs px-3 py-1 bg-slate-100 rounded-full text-slate-500">Business User Guide • {{DATE}}</div>
     </div>
@@ -60,7 +91,7 @@
     {{CONTENT}}
 
     <footer class="mt-16 pt-8 border-t text-sm text-slate-500 flex items-center justify-between">
-      <div>Generated for business users • Follows clear, consistent style</div>
+      <div>Generated for business users • Structured per The Open Group Technical Publications Style Guide</div>
       <div>© {{YEAR}}</div>
     </footer>
   </main>

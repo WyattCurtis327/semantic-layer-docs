@@ -24,14 +24,13 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
 - For visuals, also reference `references/loandepot-visual-branding.md` and the HTML template (use #6B2D8F purple accents).
 
 **Structure (Open Group Technical Publications Style Guide)**
-- Front matter style: prominent title, brief intro/preface explaining purpose + audience + how to use this guide.
-- Body: logical chapters/sections. Use H2 for main topics, H3 sparingly. Never go beyond 3 levels.
-- Heavy use of:
-  - Tables for metric summaries
-  - Bulleted and numbered lists (always introduced with a colon)
-  - Clear examples and "Try asking..." sections
-  - Glossary
-- Short paragraphs. Define every term at first use.
+- Always start from `references/document-template.md` — do not invent a new outline.
+- Front matter: title page, version, Table of Contents, Preface (Introduction, About This Document, Intended Audience, Document Conventions).
+- Body chapters (H2): each with **Objective** and **Overview** sections (H3), except Preface, Glossary, and Getting Help.
+- Heading depth: H2 = chapters, H3 = sections, H4 = named sub-items only (e.g. individual dimensions). Never H5+.
+- Lists: always introduce with a complete lead-in phrase ending in a colon.
+- Tables: introduce with a sentence ending in a colon. Use for metric summaries and glossary.
+- Glossary: term/definition table, not loose bullets.
 - Read `references/open-group-doc-structure.md` at the start of every run.
 
 **Non-technical focus**
@@ -49,89 +48,90 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
    - Use `references/example-metric-views.yaml` as reference format.
    - Clarify domain (e.g. "Finance", "Sales Performance", "Customer Success").
 
-2. **Agree on scope & output location**
-   - Document name / title (e.g. "Sales Performance Semantic Layer - Business User Guide")
-   - Target audience
-   - Output folder (default: `./docs/semantic-layer-user-guide` or similar clean location)
+2. **Generate a draft skeleton (preferred)**
+   - Run the YAML parser to scaffold the Open Group structure:
+     ```bash
+     python scripts/parse_metric_views.py path/to/metric-views.yaml ./output --layer "Sales Performance"
+     ```
+   - This produces `semantic-layer-user-guide.md` with metrics table, dimension sections, filters, glossary stubs, and example questions.
+   - If no YAML is available, copy `references/document-template.md` and fill placeholders manually.
+
+3. **Agree on scope & output location**
+   - Document title, target audience, output folder
    - Any special sections or emphasis
+   - Default output folder: user-specified path or `./docs/semantic-layer-user-guide`
 
-3. **Draft content following the structure**
-   Recommended outline (adapt as needed):
+4. **Polish the draft**
+   - Rewrite auto-generated text into friendly, benefit-focused prose per `references/loandepot-tone-and-style.md`.
+   - Every metric needs: What it measures, Why it matters, How you can use it, Example question.
+   - Validate business meaning with the user when descriptions are missing or unclear.
+   - Ensure YAML frontmatter includes: `title`, `date`, `layer`, `version`.
 
-   - **Title + short tagline**
-   - **Welcome / About this guide** (1-2 paras + "Who this is for")
-   - **What is the Semantic Layer?** — one paragraph benefit statement + 3-4 bullet advantages
-   - **Key Metrics** — overview table (Metric | In plain English | Why you care | Example value)
-     Then detailed cards or sub-sections for the 8-15 most important ones.
-   - **Dimensions & Filters** — how to slice the data (time, product, region, customer type...)
-   - **Common Questions This Answers** — 6-10 realistic examples with plain-language answers
-   - **How to Use It** — step-by-step for:
-     - AI/BI Genie or chat interfaces
-     - Dashboards & reports
-     - Self-service exploration
-     - (Light mention of governed SQL only if useful)
-   - **Glossary of Business Terms**
-   - **Getting Help** or next steps
+5. **Validate before publishing**
+   - Run the validator (required — `build_artifacts.py` runs this automatically):
+     ```bash
+     python scripts/validate_guide.py semantic-layer-user-guide.md
+     ```
+   - Fix any errors: missing Objective/Overview, TOC/chapter mismatch, forbidden technical content, missing glossary table.
 
-   Apply every Open Group and tone rule. Use consistent terminology.
-
-4. **Write the primary artifact**
-   - Create high-quality Markdown file first: `semantic-layer-user-guide.md`
-   - Make it the single source of truth — clean, readable even in raw form.
-   - Include a YAML frontmatter block with title, date, layer name if helpful.
-
-5. **Publish all three formats**
+6. **Publish all three formats**
    - Always produce:
      - `semantic-layer-user-guide.md`
      - `semantic-layer-user-guide.html` (standalone, polished)
-     - `semantic-layer-user-guide.pdf` (print-ready, headers/footers, good typography)
-   - Preferred method: run the helper script
+     - `semantic-layer-user-guide.pdf` (print-ready)
+   - Run:
      ```bash
      python scripts/build_artifacts.py semantic-layer-user-guide.md ./output-folder
      ```
-   - The script (`scripts/build_artifacts.py`) will:
-     - Use the HTML template in `templates/user-guide.html` (Tailwind CDN for beauty + loanDepot purple #6B2D8F accents and branding)
-     - Generate a clean PDF via fpdf2
-   - If the script complains about missing packages, run:
-     `python -m pip install fpdf2 markdown`
-   - If pandoc is available on the system, you may also offer `pandoc ... -o .pdf` as an alternative.
+   - The build script:
+     - Validates the Markdown first
+     - Renders HTML via the `markdown` library (tables, bold, lists)
+     - Auto-generates linked TOC and header navigation from H2 chapters
+     - Verifies all anchor links resolve
+     - Generates PDF via fpdf2
+   - Install deps if needed: `pip install -r requirements.txt`
 
-6. **Quality & polish pass**
-   - Read the generated .md, .html and verify .pdf was created.
-   - Check:
-     - Tone feels friendly and clear
-     - Every metric has a plain-English definition
-     - No unexplained acronyms
-     - Good use of lists and tables
-     - Scannable headings
-   - Fix issues with search_replace on the .md, then re-run the build script.
-   - Provide the user with the three file paths.
+7. **Quality & polish pass**
+   - Open the HTML in a browser. Click every TOC link and header nav item.
+   - Verify tone, metric coverage, glossary, and list formatting.
+   - Fix issues in the `.md`, re-validate, and re-build.
+   - Provide the user with all three file paths.
 
-7. **Present to user**
+8. **Present to user**
    - Summarize what was created.
-   - Show key excerpts or the table of contents.
-   - Offer to iterate: add more metrics, create diagrams (use image tools if needed), translate certain sections, add a one-pager summary, etc.
+   - Show the table of contents.
+   - Offer to iterate: more metrics, diagrams, translations, one-pager summary, etc.
 
 ## Handling Input Formats
 
-- YAML / JSON definitions: parse `metrics` and `dimensions`. Turn `expr` into human explanation.
-- Free text descriptions: ask clarifying questions, then structure.
-- Existing docs: incorporate and rewrite into the friendly style.
+- **YAML / JSON**: use `parse_metric_views.py` first, then polish.
+- **Free text**: ask clarifying questions, then fill `document-template.md`.
+- **Existing docs**: incorporate and rewrite into the friendly Open Group structure.
 - Always ask the user to validate the business meaning of each metric.
 
 ## Output Location & Naming
 
 Keep the three files together in one folder. Use consistent, descriptive names.
 
-When the user says "publish" or "generate the artifacts", always deliver all three formats.
+When the user says "publish" or "generate the artifacts", always validate then deliver all three formats.
 
-## References (read these at the beginning of any task)
+## Scripts & References
 
+| File | Purpose |
+|------|---------|
+| `references/document-template.md` | Canonical Open Group chapter structure — copy this |
+| `references/example-metric-views.yaml` | Sample Metric View YAML input |
+| `examples/sales-performance-guide.md` | Full worked example (regression reference) |
+| `scripts/parse_metric_views.py` | YAML → draft Markdown skeleton |
+| `scripts/validate_guide.py` | Pre-publish structure and content checks |
+| `scripts/build_artifacts.py` | Validate + build HTML and PDF |
+| `scripts/doc_utils.py` | Shared slug, TOC, and nav utilities |
+| `templates/user-guide.html` | HTML shell with loanDepot purple branding |
+| `requirements.txt` | Python dependencies |
+
+Also read at the start of every task:
 - `references/loandepot-tone-and-style.md`
-- `references/loandepot-visual-branding.md` (purple colors + typography)
+- `references/loandepot-visual-branding.md`
 - `references/open-group-doc-structure.md`
-- `references/example-metric-views.yaml`
-- `templates/user-guide.html` (for HTML output styling with loanDepot purple branding)
-- `scripts/build_artifacts.py` (PDF uses matching purple accents)
 
 You now have everything you need to create outstanding, usable documentation that makes semantic layers accessible to the business.

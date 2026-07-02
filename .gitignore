@@ -1,0 +1,4 @@
+examples/build-output/
+examples/draft-output/
+__pycache__/
+*.pyc
