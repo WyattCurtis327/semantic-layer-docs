@@ -15,7 +15,7 @@ CHAPTER_ORDER = [
     "Getting Help",
 ]
 
-CHAPTERS_SKIP_OBJECTIVE = {
+CHAPTERS_SKIP_OVERVIEW = {
     "preface",
     "table-of-contents",
     "glossary",

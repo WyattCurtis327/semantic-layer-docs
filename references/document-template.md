@@ -51,10 +51,6 @@ This document uses the following typographical conventions:
 
 ## Understanding the Semantic Layer
 
-### Objective
-
-The purpose of this chapter is to explain what the semantic layer is and why you should use it.
-
 ### Overview
 
 The semantic layer is your company's agreed-upon definition of {{DOMAIN}} metrics. Everyone, from the front line to the boardroom, sees the same numbers, calculated the same way, every time.
@@ -69,10 +65,6 @@ The semantic layer provides the following benefits:
 - Explore by field with confidence
 
 ## Key Metrics
-
-### Objective
-
-The purpose of this chapter is to describe the primary metrics available in the semantic layer.
 
 ### Overview
 
@@ -102,10 +94,6 @@ The following table summarizes the key metrics:
 
 ## Fields and Filters
 
-### Objective
-
-The purpose of this chapter is to explain how you can slice and filter metrics.
-
 ### Overview
 
 Fields let you break metrics apart. Filters narrow the data to what you care about. Together, they control how you view your data.
@@ -132,10 +120,6 @@ Metrics in this layer apply the following filter by default:
 
 ## Common Questions
 
-### Objective
-
-The purpose of this chapter is to show realistic questions you can ask using the semantic layer.
-
 ### Overview
 
 The following numbered examples reflect common business questions. Use them in AI/BI Genie, dashboards, or self-service tools.
@@ -149,10 +133,6 @@ Try the following questions:
 3. {{QUESTION_3}}
 
 ## Using the Semantic Layer
-
-### Objective
-
-The purpose of this chapter is to describe how you can access and use these metrics in everyday tools.
 
 ### Overview
 

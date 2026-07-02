@@ -26,7 +26,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
 **Structure (Open Group Technical Publications Style Guide)**
 - Always start from `references/document-template.md` — do not invent a new outline.
 - Front matter: title page, version, Table of Contents, Preface (Introduction, About This Document, Intended Audience, Document Conventions).
-- Body chapters (H2): each with **Objective** and **Overview** sections (H3), except Preface, Glossary, and Getting Help.
+- Body chapters (H2): each with an **Overview** section (H3), except Preface, Glossary, and Getting Help.
 - Heading depth: H2 = chapters, H3 = sections, H4 = named sub-items only (e.g. individual fields). Never H5+.
 - Lists: always introduce with a complete lead-in phrase ending in a colon.
 - Tables: introduce with a sentence ending in a colon. Use for metric summaries and glossary.
@@ -72,7 +72,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
      ```bash
      python scripts/validate_guide.py semantic-layer-user-guide.md
      ```
-   - Fix any errors: missing Objective/Overview, TOC/chapter mismatch, forbidden technical content, missing glossary table.
+   - Fix any errors: missing Overview sections, TOC/chapter mismatch, forbidden technical content, missing glossary table.
 
 6. **Publish all three formats**
    - Always produce:

@@ -18,7 +18,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from doc_utils import (  # noqa: E402
-    CHAPTERS_SKIP_OBJECTIVE,
+    CHAPTERS_SKIP_OVERVIEW,
     CHAPTER_ORDER,
     extract_chapters,
     parse_frontmatter,
@@ -72,14 +72,12 @@ def validate_toc(md_body: str, chapters: list[tuple[str, str]]) -> list[str]:
     return errors
 
 
-def validate_objective_overview(md_body: str, chapters: list[tuple[str, str]]) -> list[str]:
+def validate_chapter_overviews(md_body: str, chapters: list[tuple[str, str]]) -> list[str]:
     errors: list[str] = []
     for title, slug in chapters:
-        if slug in CHAPTERS_SKIP_OBJECTIVE:
+        if slug in CHAPTERS_SKIP_OVERVIEW:
             continue
         body = chapter_body(md_body, title)
-        if "### Objective" not in body:
-            errors.append(f'Chapter "{title}" missing ### Objective section')
         if "### Overview" not in body:
             errors.append(f'Chapter "{title}" missing ### Overview section')
     return errors
@@ -145,7 +143,7 @@ def validate_guide(md_text: str) -> list[str]:
     errors.extend(validate_frontmatter(meta))
     errors.extend(validate_chapter_order(chapters))
     errors.extend(validate_toc(md_body, chapters))
-    errors.extend(validate_objective_overview(md_body, chapters))
+    errors.extend(validate_chapter_overviews(md_body, chapters))
     errors.extend(validate_glossary_table(md_body))
     errors.extend(validate_non_technical(md_body))
     return errors

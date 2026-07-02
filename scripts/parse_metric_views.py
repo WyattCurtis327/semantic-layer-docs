@@ -201,10 +201,6 @@ This document uses the following typographical conventions:
 
 ## Understanding the Semantic Layer
 
-### Objective
-
-The purpose of this chapter is to explain what the semantic layer is and why you should use it.
-
 ### Overview
 
 The semantic layer is your single source of truth for {layer_name.lower()} metrics. Everyone sees the same numbers, calculated the same way, every time.
@@ -220,10 +216,6 @@ The semantic layer provides the following benefits:
 
 ## Key Metrics
 
-### Objective
-
-The purpose of this chapter is to describe the primary metrics available in the semantic layer.
-
 ### Overview
 
 This chapter covers {len(metrics)} governed metric(s). Use the summary table for a quick scan, then read each section for detail.
@@ -237,10 +229,6 @@ The following table summarizes the key metrics:
 {build_metric_sections(metrics)}
 
 ## Fields and Filters
-
-### Objective
-
-The purpose of this chapter is to explain how you can slice and filter metrics.
 
 ### Overview
 
@@ -260,10 +248,6 @@ Metrics in this layer may apply the following filters:
 
 ## Common Questions
 
-### Objective
-
-The purpose of this chapter is to show realistic questions you can ask using the semantic layer.
-
 ### Overview
 
 The following numbered examples reflect common business questions.
@@ -275,10 +259,6 @@ Try the following questions:
 {build_example_questions(metrics, dimensions)}
 
 ## Using the Semantic Layer
-
-### Objective
-
-The purpose of this chapter is to describe how you can access and use these metrics in everyday tools.
 
 ### Overview
 
