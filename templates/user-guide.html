@@ -10,6 +10,7 @@
     :root {
       --primary: #0f172a;
       --ld-purple: #6B2D8F;
+      --ld-purple-light: #F3E8FF;
       --ld-green: #A6CE39;
       --ld-green-light: #EDF6DC;
       --ld-green-text: #3D5220;
@@ -25,14 +26,16 @@
     .friendly { color: #0f172a; }
     table { border-collapse: collapse; }
     th, td { border: 1px solid #e2e8f0; }
-    .doc-content table th,
-    .doc-content table td {
+    .doc-content table th {
       background-color: var(--ld-green-light);
       color: var(--ld-green-text);
+      font-weight: 600;
       text-align: left;
     }
-    .doc-content table th {
-      font-weight: 600;
+    .doc-content table td {
+      background-color: var(--ld-purple-light);
+      color: var(--ld-purple);
+      text-align: left;
     }
     .toc a:hover { color: #6B2D8F; }
     .callout { border-left: 4px solid #6B2D8F; }
