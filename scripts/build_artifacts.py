@@ -26,7 +26,8 @@ from doc_utils import (  # noqa: E402
     build_nav_links,
     extract_chapters,
     format_inline_html,
-    link_toc_html,
+    build_sidebar_toc,
+    remove_inline_toc,
     normalize_pdf_text,
     parse_frontmatter,
     parse_simple_md,
@@ -57,7 +58,7 @@ def markdown_to_html(md_body: str) -> str:
 
 def style_doc_html(html: str, chapters: list[tuple[str, str]]) -> str:
     html = add_heading_ids_and_classes(html)
-    html = link_toc_html(html, chapters)
+    html = remove_inline_toc(html)
     return f'<div class="doc-content">{html}</div>'
 
 
@@ -217,9 +218,10 @@ def build_html(
 
     body_for_html = strip_first_h1(md_body)
     content_html = style_doc_html(markdown_to_html(body_for_html), chapters)
+    sidebar_toc = build_sidebar_toc(chapters)
     nav_links = build_nav_links(chapters)
 
-    link_errors = validate_html_links(content_html)
+    link_errors = validate_html_links(content_html + sidebar_toc)
     if link_errors:
         print("Warning: HTML link validation issues:")
         for err in link_errors:
@@ -230,6 +232,7 @@ def build_html(
         "{{LAYER_NAME}}": layer_name,
         "{{TAGLINE}}": tagline or "User-friendly guide to your business metrics",
         "{{CONTENT}}": content_html,
+        "{{SIDEBAR_TOC}}": sidebar_toc,
         "{{NAV_LINKS}}": nav_links,
         "{{DATE}}": datetime.now().strftime("%B %Y"),
         "{{YEAR}}": str(datetime.now().year),

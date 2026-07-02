@@ -86,7 +86,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
    - The build script:
      - Validates the Markdown first
      - Renders HTML via the `markdown` library (tables, bold, lists)
-     - Auto-generates linked TOC and header navigation from H2 chapters
+     - Places a linked TOC in a left sidebar (sticky on desktop) and header navigation from H2 chapters
      - Verifies all anchor links resolve
      - Generates PDF via fpdf2
    - Install deps if needed: `pip install -r requirements.txt`

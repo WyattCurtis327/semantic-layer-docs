@@ -136,25 +136,26 @@ def build_nav_links(chapters: list[tuple[str, str]]) -> str:
     return "\n        ".join(links)
 
 
-def link_toc_html(html: str, chapters: list[tuple[str, str]]) -> str:
-    slug_by_title = {title: slug for title, slug in chapters}
-    toc_pattern = re.compile(
-        r'(<h2[^>]*id="table-of-contents"[^>]*>.*?</h2>\s*)<ol>(.*?)</ol>',
-        re.DOTALL | re.IGNORECASE,
+def build_sidebar_toc(chapters: list[tuple[str, str]]) -> str:
+    items_html: list[str] = []
+    for title, slug in chapters:
+        items_html.append(
+            f'<li><a href="#{slug}" class="toc-link">{format_inline_html(title)}</a></li>'
+        )
+    return (
+        '<nav class="doc-sidebar-toc" aria-label="Table of contents">'
+        '<div class="doc-sidebar-title">Contents</div>'
+        f'<ol class="toc-list">{"".join(items_html)}</ol>'
+        "</nav>"
     )
 
-    def replace_toc(match: re.Match[str]) -> str:
-        prefix = match.group(1)
-        items_html: list[str] = []
-        for title, slug in chapters:
-            if title in slug_by_title:
-                slug = slug_by_title[title]
-            items_html.append(
-                f'<li><a href="#{slug}" class="toc-link">{format_inline_html(title)}</a></li>'
-            )
-        return f'{prefix}<ol class="toc-list">{"".join(items_html)}</ol>'
 
-    return toc_pattern.sub(replace_toc, html, count=1)
+def remove_inline_toc(html: str) -> str:
+    toc_pattern = re.compile(
+        r'<h2[^>]*id="table-of-contents"[^>]*>.*?</h2>\s*<ol[^>]*>.*?</ol>',
+        re.DOTALL | re.IGNORECASE,
+    )
+    return toc_pattern.sub("", html, count=1)
 
 
 def add_heading_ids_and_classes(html: str) -> str:
