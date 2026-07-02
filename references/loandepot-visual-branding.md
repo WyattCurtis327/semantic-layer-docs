@@ -14,14 +14,17 @@
 - Light tint: #EDF6DC (table column headers, subtle highlights)
 - Header text on green: #3D5220 (dark green for readable contrast)
 - Use for:
-  - Table column headers (light green #EDF6DC, text #3D5220)
+  - Table column headers (light green #EDF6DC background)
   - Optional success/positive callout accents
   - PDF table header fill (RGB 237, 246, 220)
 
 ## Table Body (Purple)
 - Background: #F3E8FF (light purple, matches badge/pill style)
-- Text: #6B2D8F (loanDepot purple)
 - Use for all table data cells (`td`) in HTML and PDF body rows
+
+## Table Typography & Borders
+- Text: #000000 (black) for all header and body cells
+- Borders: 1px solid #e2e8f0 (narrow light grey) on every cell and outer table edge
 
 ## Typography
 - Body: Inter or system sans-serif (clean, readable)

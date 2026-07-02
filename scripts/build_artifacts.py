@@ -121,17 +121,19 @@ class SemanticPDF(FPDF):
         if not rows:
             return
         col_width = (self.w - self.l_margin - self.r_margin) / max(len(rows[0]), 1)
-        # loanDepot light green header row (#EDF6DC) with dark green text (#3D5220)
+        self.set_draw_color(226, 232, 240)  # light grey borders #e2e8f0
+        self.set_line_width(0.2)
+        self.set_text_color(0, 0, 0)
+        # Header row: light green (#EDF6DC)
         self.set_font("Helvetica", "B", 9)
         self.set_fill_color(237, 246, 220)
-        self.set_text_color(61, 82, 32)
         for row in rows[:1]:
             for cell in row:
                 self.cell(col_width, 7, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
             self.ln()
+        # Body rows: light purple (#F3E8FF)
         self.set_font("Helvetica", size=9)
-        self.set_fill_color(243, 232, 255)  # loanDepot light purple #F3E8FF
-        self.set_text_color(107, 45, 143)  # loanDepot purple #6B2D8F
+        self.set_fill_color(243, 232, 255)
         for row in rows[1:20]:
             for cell in row:
                 self.cell(col_width, 6.5, normalize_pdf_text(str(cell))[:40], border=1, fill=True)

@@ -24,18 +24,24 @@
     .doc-section { scroll-margin-top: 96px; }
     html { scroll-behavior: smooth; }
     .friendly { color: #0f172a; }
-    table { border-collapse: collapse; }
-    th, td { border: 1px solid #e2e8f0; }
+    .doc-content table {
+      border-collapse: collapse;
+      border: 1px solid #e2e8f0;
+      width: 100%;
+    }
+    .doc-content table th,
+    .doc-content table td {
+      border: 1px solid #e2e8f0;
+      color: #000000;
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+    }
     .doc-content table th {
       background-color: var(--ld-green-light);
-      color: var(--ld-green-text);
       font-weight: 600;
-      text-align: left;
     }
     .doc-content table td {
       background-color: var(--ld-purple-light);
-      color: var(--ld-purple);
-      text-align: left;
     }
     .toc a:hover { color: #6B2D8F; }
     .callout { border-left: 4px solid #6B2D8F; }
