@@ -66,8 +66,6 @@ def build_metric_sections(metrics: list[dict]) -> str:
 
 **What it measures:** {desc}. {plain}.
 
-**Why it matters:** {name} gives you a trusted answer to a core business question using the same definition across teams.
-
 **How you can use it:**
 
 - Track trends over time

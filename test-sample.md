@@ -84,8 +84,6 @@ The following table summarizes the key metrics:
 
 **What it measures:** The sum of all order amounts from completed sales, before any discounts or returns are applied.
 
-**Why it matters:** Total Revenue is your headline number. It answers how big the business is right now and lets you compare periods, regions, and product categories on equal footing.
-
 **How you can use it:**
 
 - Track month-over-month and year-over-year growth
@@ -98,8 +96,6 @@ The following table summarizes the key metrics:
 
 **What it measures:** Total Revenue minus discounts and returns. This is the money you actually retained from sales.
 
-**Why it matters:** Gross numbers can look strong while returns and discounts quietly erode results. Net Revenue shows the real picture, especially when evaluating promotions, product quality, or seasonal return patterns.
-
 **How you can use it:**
 
 - Compare net versus total revenue to spot discount or return pressure
@@ -111,8 +107,6 @@ The following table summarizes the key metrics:
 ### Order Count
 
 **What it measures:** The number of unique completed orders, with each customer purchase counted once.
-
-**Why it matters:** Revenue alone does not tell the full story. Order Count shows customer demand and sales velocity. A rising order count with flat revenue may signal smaller basket sizes. The opposite may mean higher-value purchases.
 
 **How you can use it:**
 

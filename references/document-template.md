@@ -82,8 +82,6 @@ The following table summarizes the key metrics:
 
 **What it measures:** {{WHAT_IT_MEASURES}}
 
-**Why it matters:** {{WHY_IT_MATTERS}}
-
 **How you can use it:**
 
 - {{USE_1}}
