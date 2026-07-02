@@ -24,7 +24,8 @@
 
 ## Table Typography & Borders
 - Text: #000000 (black) for all header and body cells
-- Borders: 1px solid #e2e8f0 (narrow light grey) on every cell and outer table edge
+- Vertical borders: 1px solid #e2e8f0 (narrow light grey)
+- Horizontal borders: 2px solid #e2e8f0 (thicker row dividers and table top/bottom)
 
 ## Typography
 - Body: Inter or system sans-serif (clean, readable)

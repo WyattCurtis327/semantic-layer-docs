@@ -120,24 +120,43 @@ class SemanticPDF(FPDF):
     def add_table(self, rows: list[list[str]]):
         if not rows:
             return
-        col_width = (self.w - self.l_margin - self.r_margin) / max(len(rows[0]), 1)
-        self.set_draw_color(226, 232, 240)  # light grey borders #e2e8f0
-        self.set_line_width(0.2)
+        table_w = self.w - self.l_margin - self.r_margin
+        col_width = table_w / max(len(rows[0]), 1)
+        x_start = self.l_margin
+        self.set_draw_color(226, 232, 240)  # light grey #e2e8f0
         self.set_text_color(0, 0, 0)
-        # Header row: light green (#EDF6DC)
-        self.set_font("Helvetica", "B", 9)
-        self.set_fill_color(237, 246, 220)
-        for row in rows[:1]:
+
+        for r_idx, row in enumerate(rows[:20]):
+            # Thicker horizontal rules between rows
+            self.set_line_width(0.55)
+            y_top = self.get_y()
+            self.line(x_start, y_top, x_start + table_w, y_top)
+
+            if r_idx == 0:
+                self.set_font("Helvetica", "B", 9)
+                self.set_fill_color(237, 246, 220)
+                row_h = 7
+            else:
+                self.set_font("Helvetica", size=9)
+                self.set_fill_color(243, 232, 255)
+                row_h = 6.5
+
+            # Narrow vertical dividers between columns
+            self.set_line_width(0.2)
             for cell in row:
-                self.cell(col_width, 7, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
+                self.cell(
+                    col_width,
+                    row_h,
+                    normalize_pdf_text(str(cell))[:40],
+                    border="LR",
+                    fill=True,
+                )
             self.ln()
-        # Body rows: light purple (#F3E8FF)
-        self.set_font("Helvetica", size=9)
-        self.set_fill_color(243, 232, 255)
-        for row in rows[1:20]:
-            for cell in row:
-                self.cell(col_width, 6.5, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
-            self.ln()
+
+        # Thick bottom border
+        self.set_line_width(0.55)
+        y_bottom = self.get_y()
+        self.line(x_start, y_bottom, x_start + table_w, y_bottom)
         self.ln(4)
 
 
