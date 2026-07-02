@@ -4,10 +4,19 @@
 - Hex: #6B2D8F (deep purple used for accents, headers, links, borders, badges)
 - Use for:
   - Logo backgrounds / icons
-  - Accent borders and lines (callouts, table headers if styled)
+  - Accent borders and lines (callouts)
   - Hover states on links and nav
   - Badge / pill backgrounds (light tint #F3E8FF with text #6B2D8F)
   - PDF accent lines / highlights
+
+## Secondary Accent Color (Green)
+- Hex: #A6CE39 (loanDepot logo green)
+- Light tint: #EDF6DC (table column headers, subtle highlights)
+- Header text on green: #3D5220 (dark green for readable contrast)
+- Use for:
+  - Table column header backgrounds (always use light green #EDF6DC)
+  - Optional success/positive callout accents
+  - PDF table header row fill (RGB 237, 246, 220)
 
 ## Typography
 - Body: Inter or system sans-serif (clean, readable)

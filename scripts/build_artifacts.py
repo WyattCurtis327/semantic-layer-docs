@@ -120,16 +120,21 @@ class SemanticPDF(FPDF):
     def add_table(self, rows: list[list[str]]):
         if not rows:
             return
-        self.set_font("Helvetica", "B", 9)
         col_width = (self.w - self.l_margin - self.r_margin) / max(len(rows[0]), 1)
+        # loanDepot light green header row (#EDF6DC) with dark green text (#3D5220)
+        self.set_font("Helvetica", "B", 9)
+        self.set_fill_color(237, 246, 220)
+        self.set_text_color(61, 82, 32)
         for row in rows[:1]:
             for cell in row:
-                self.cell(col_width, 7, normalize_pdf_text(str(cell))[:40], border=1)
+                self.cell(col_width, 7, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
             self.ln()
         self.set_font("Helvetica", size=9)
+        self.set_fill_color(255, 255, 255)
+        self.set_text_color(30)
         for row in rows[1:20]:
             for cell in row:
-                self.cell(col_width, 6.5, normalize_pdf_text(str(cell))[:40], border=1)
+                self.cell(col_width, 6.5, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
             self.ln()
         self.ln(4)
 
