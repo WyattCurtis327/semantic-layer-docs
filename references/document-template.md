@@ -2,12 +2,11 @@
 title: {{LAYER_NAME}} Semantic Layer — Business User Guide
 date: {{DATE}}
 layer: {{LAYER_NAME}}
-version: 1.0
 ---
 
 # {{LAYER_NAME}} Semantic Layer — Business User Guide
 
-Version 1.0 | {{DATE}}
+{{DATE}}
 
 ## Table of Contents
 

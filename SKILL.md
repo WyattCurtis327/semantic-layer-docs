@@ -25,7 +25,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
 
 **Structure (Open Group Technical Publications Style Guide)**
 - Always start from `references/document-template.md` — do not invent a new outline.
-- Front matter: title page, version, and Table of Contents.
+- Front matter: title page, date, and Table of Contents.
 - Body chapters (H2): each with an **Overview** section (H3), except Glossary and Getting Help.
 - Heading depth: H2 = chapters, H3 = sections, H4 = named sub-items only (e.g. individual fields). Never H5+.
 - Lists: always introduce with a complete lead-in phrase ending in a colon.
@@ -65,7 +65,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
    - Rewrite auto-generated text into friendly, benefit-focused prose per `references/loandepot-tone-and-style.md`.
    - Every metric needs: What it measures, How you can use it, Example question.
    - Validate business meaning with the user when descriptions are missing or unclear.
-   - Ensure YAML frontmatter includes: `title`, `date`, `layer`, `version`.
+   - Ensure YAML frontmatter includes: `title`, `date`, `layer`.
 
 5. **Validate before publishing**
    - Run the validator (required — `build_artifacts.py` runs this automatically):

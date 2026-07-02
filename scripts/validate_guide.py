@@ -24,7 +24,7 @@ from doc_utils import (  # noqa: E402
     parse_frontmatter,
 )
 
-REQUIRED_FRONTMATTER = {"title", "date", "layer", "version"}
+REQUIRED_FRONTMATTER = {"title", "date", "layer"}
 FORBIDDEN_PATTERNS = [
     (r"\bSELECT\b", "raw SQL (SELECT)"),
     (r"```yaml", "raw YAML code block"),

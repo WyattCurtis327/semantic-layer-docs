@@ -159,12 +159,11 @@ def generate_draft(data: dict, layer_name: str, title: str | None = None) -> str
 title: {doc_title}
 date: {date_str}
 layer: {layer_name}
-version: 0.1
 ---
 
 # {doc_title}
 
-Version 0.1 (draft) | {date_str}
+{date_str}
 
 ## Table of Contents
 

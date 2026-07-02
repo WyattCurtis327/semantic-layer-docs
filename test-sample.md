@@ -2,12 +2,11 @@
 title: Sales Performance Semantic Layer — Business User Guide
 date: July 2026
 layer: Sales Performance
-version: 1.0
 ---
 
 # Sales Performance Semantic Layer — Business User Guide
 
-Version 1.0 | July 2026
+July 2026
 
 ## Table of Contents
 
