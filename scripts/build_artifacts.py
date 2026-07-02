@@ -139,7 +139,7 @@ class SemanticPDF(FPDF):
                 row_h = 7
             else:
                 self.set_font("Helvetica", size=9)
-                self.set_fill_color(243, 232, 255)
+                self.set_fill_color(241, 245, 249)  # light grey #F1F5F9
                 row_h = 6.5
 
             # Narrow vertical dividers between columns
