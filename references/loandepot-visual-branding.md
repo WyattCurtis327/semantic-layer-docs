@@ -18,8 +18,8 @@
   - Optional success/positive callout accents
   - PDF table header fill (RGB 237, 246, 220)
 
-## Table Body (Purple)
-- Background: #F3E8FF (light purple, matches badge/pill style)
+## Table Body
+- Background: #F1F5F9 (light grey)
 - Use for all table data cells (`td`) in HTML and PDF body rows
 
 ## Table Typography & Borders

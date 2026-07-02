@@ -19,7 +19,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
 - Short sentences. Active voice. "You can..."
 - Reassuring and empowering. Focus on what the user gains ("See accurate revenue instantly without filing a ticket").
 - Use "you" and "your". Avoid "we", corporate speak, and data team language.
-- **Visuals**: Use loanDepot purple (#6B2D8F) for links, callouts, badges, and accents. Tables: light green headers (#EDF6DC), light purple body (#F3E8FF), black text (#000000), narrow light grey borders (#e2e8f0) on all cells. Maintain clean modern sans-serif typography (Inter + Space Grotesk or similar).
+- **Visuals**: Use loanDepot purple (#6B2D8F) for links, callouts, badges, and accents. Tables: light green headers (#EDF6DC), light grey body (#F1F5F9), black text (#000000), narrow light grey borders (#e2e8f0) on all cells. Maintain clean modern sans-serif typography (Inter + Space Grotesk or similar).
 - Read `references/loandepot-tone-and-style.md` every time before writing.
 - For visuals, also reference `references/loandepot-visual-branding.md` and the HTML template (use #6B2D8F purple accents).
 
