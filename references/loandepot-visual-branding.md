@@ -14,9 +14,9 @@
 - Light tint: #EDF6DC (table column headers, subtle highlights)
 - Header text on green: #3D5220 (dark green for readable contrast)
 - Use for:
-  - Table column header backgrounds (always use light green #EDF6DC)
+  - Table backgrounds — headers and body cells (always use light green #EDF6DC)
   - Optional success/positive callout accents
-  - PDF table header row fill (RGB 237, 246, 220)
+  - PDF table fill (RGB 237, 246, 220) for all rows
 
 ## Typography
 - Body: Inter or system sans-serif (clean, readable)

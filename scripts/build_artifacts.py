@@ -130,8 +130,8 @@ class SemanticPDF(FPDF):
                 self.cell(col_width, 7, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
             self.ln()
         self.set_font("Helvetica", size=9)
-        self.set_fill_color(255, 255, 255)
-        self.set_text_color(30)
+        self.set_fill_color(237, 246, 220)
+        self.set_text_color(61, 82, 32)
         for row in rows[1:20]:
             for cell in row:
                 self.cell(col_width, 6.5, normalize_pdf_text(str(cell))[:40], border=1, fill=True)
