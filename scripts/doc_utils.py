@@ -8,7 +8,7 @@ CHAPTER_ORDER = [
     "Preface",
     "Understanding the Semantic Layer",
     "Key Metrics",
-    "Dimensions and Filters",
+    "Fields and Filters",
     "Common Questions",
     "Using the Semantic Layer",
     "Glossary",
@@ -25,7 +25,7 @@ CHAPTERS_SKIP_OBJECTIVE = {
 NAV_LABELS = {
     "understanding-the-semantic-layer": "Overview",
     "key-metrics": "Metrics",
-    "dimensions-and-filters": "Dimensions",
+    "fields-and-filters": "Fields",
     "common-questions": "Examples",
     "glossary": "Glossary",
 }

@@ -14,7 +14,7 @@ Version 1.0 | {{DATE}}
 1. Preface
 2. Understanding the Semantic Layer
 3. Key Metrics
-4. Dimensions and Filters
+4. Fields and Filters
 5. Common Questions
 6. Using the Semantic Layer
 7. Glossary
@@ -24,11 +24,11 @@ Version 1.0 | {{DATE}}
 
 ### Introduction
 
-This guide explains the {{LAYER_NAME}} semantic layer in plain English. It translates governed metric and dimension definitions into language you can use in AI/BI Genie, dashboards, and reports. You do not need to know SQL, YAML, or data pipeline details to use this document.
+This guide explains the {{LAYER_NAME}} semantic layer in plain English. It translates governed metric and field definitions into language you can use in AI/BI Genie, dashboards, and reports. You do not need to know SQL, YAML, or data pipeline details to use this document.
 
 ### About This Document
 
-This document describes the business meaning of each metric, dimension, and filter in the {{LAYER_NAME}} semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity, while keeping a friendly, benefit-focused tone.
+This document describes the business meaning of each metric, field, and filter in the {{LAYER_NAME}} semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity, while keeping a friendly, benefit-focused tone.
 
 The body is organized into chapters. Each chapter covers one main topic. Sections use numbered headings. Lists are introduced with a lead-in phrase and a colon. Terms are defined on first use and collected in the Glossary.
 
@@ -44,7 +44,7 @@ This guide is intended for the following audiences:
 
 This document uses the following typographical conventions:
 
-- **Bold** indicates a metric name, dimension name, or defined term at first use
+- **Bold** indicates a metric name, field name, or defined term at first use
 - Tables summarize metrics and glossary entries
 - Bulleted lists present related options or benefits
 - Numbered lists present sequences, procedures, or ranked examples
@@ -66,7 +66,7 @@ The semantic layer provides the following benefits:
 - See accurate numbers instantly, without waiting on the data team
 - Trust that your dashboard matches what leadership sees in their reports
 - Ask natural-language questions and get answers backed by governed definitions
-- Explore by dimension with confidence
+- Explore by field with confidence
 
 ## Key Metrics
 
@@ -100,7 +100,7 @@ The following table summarizes the key metrics:
 
 **Example question:** {{EXAMPLE_QUESTION}}
 
-## Dimensions and Filters
+## Fields and Filters
 
 ### Objective
 
@@ -108,17 +108,17 @@ The purpose of this chapter is to explain how you can slice and filter metrics.
 
 ### Overview
 
-Dimensions let you break metrics apart. Filters narrow the data to what you care about. Together, they control how you view your data.
+Fields let you break metrics apart. Filters narrow the data to what you care about. Together, they control how you view your data.
 
-### Available Dimensions
+### Available Fields
 
-You can analyze metrics using the following dimensions:
+You can analyze metrics using the following fields:
 
-#### {{DIMENSION_NAME}}
+#### {{FIELD_NAME}}
 
-- {{DIMENSION_DETAIL_1}}
-- {{DIMENSION_DETAIL_2}}
-- {{DIMENSION_DETAIL_3}}
+- {{FIELD_DETAIL_1}}
+- {{FIELD_DETAIL_2}}
+- {{FIELD_DETAIL_3}}
 
 ### Default Filters
 
@@ -156,7 +156,7 @@ The purpose of this chapter is to describe how you can access and use these metr
 
 ### Overview
 
-You can use the semantic layer in chat interfaces, dashboards, and self-service exploration. The approach is the same in each case: pick a metric, add dimensions, and set a date range.
+You can use the semantic layer in chat interfaces, dashboards, and self-service exploration. The approach is the same in each case: pick a metric, add fields, and set a date range.
 
 ### In AI/BI Genie or Chat Interfaces
 
@@ -165,14 +165,14 @@ Follow these steps:
 1. Ask questions in everyday language
 2. Name the metric you want
 3. Add how you want it broken down
-4. Start simple, then add dimensions
+4. Start simple, then add fields
 
 ### In Dashboards and Reports
 
 Apply the semantic layer as follows:
 
 - Pin headline metrics as key performance indicators
-- Use time dimensions on trend charts
+- Use time fields on trend charts
 - Add category or region filters so viewers can explore on their own
 
 ### In Self-Service Exploration
@@ -180,7 +180,7 @@ Apply the semantic layer as follows:
 Follow this workflow:
 
 1. Pick a metric
-2. Choose one or two dimensions
+2. Choose one or two fields
 3. Set a date range
 4. Compare periods using the same definitions every time
 5. Share views knowing teammates see identical numbers
@@ -191,9 +191,9 @@ The following table defines terms used in this guide:
 
 | Term | Definition |
 |------|------------|
-| Semantic Layer | The governed set of metric and dimension definitions that ensures everyone uses the same trusted numbers |
+| Semantic Layer | The governed set of metric and field definitions that ensures everyone uses the same trusted numbers |
 | Metric | A calculated business number defined once and used everywhere |
-| Dimension | A way to group or filter data for analysis |
+| Field | A way to group or filter data for analysis |
 | {{GLOSSARY_TERM}} | {{GLOSSARY_DEFINITION}} |
 
 ## Getting Help
@@ -202,6 +202,6 @@ If you need assistance, use the following guidance:
 
 - If a metric looks wrong, confirm your date range, filters, and date period
 - If you need a number not in this guide, ask your data team whether a governed metric already exists
-- If you want this guide updated, request additions when new metrics or dimensions are published
+- If you want this guide updated, request additions when new metrics or fields are published
 
 Your numbers should feel simple, trustworthy, and ready when you need them. This guide is here to make that happen.

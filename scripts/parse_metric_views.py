@@ -80,10 +80,10 @@ def build_metric_sections(metrics: list[dict]) -> str:
     return "\n\n".join(sections) if sections else "_No metrics found in YAML._"
 
 
-def build_dimension_sections(dimensions: list[dict]) -> str:
+def build_field_sections(dimensions: list[dict]) -> str:
     sections: list[str] = []
     for dim in dimensions:
-        name = humanize_name(dim.get("name", "dimension"))
+        name = humanize_name(dim.get("name", "field"))
         desc = dim.get("description") or f"A way to group or filter by {name.lower()}"
         sections.append(
             f"""#### {name}
@@ -93,7 +93,7 @@ def build_dimension_sections(dimensions: list[dict]) -> str:
 - Pair it with key metrics for deeper analysis
 """
         )
-    return "\n\n".join(sections) if sections else "_No dimensions found in YAML._"
+    return "\n\n".join(sections) if sections else "_No fields found in YAML._"
 
 
 def build_filter_sections(filters: list[dict]) -> str:
@@ -119,7 +119,7 @@ def build_example_questions(metrics: list[dict], dimensions: list[dict]) -> str:
         name = metric_display_name(metric)
         questions.append(f"What was our {name.lower()} last month?")
     for dim in dimensions[:2]:
-        name = humanize_name(dim.get("name", "dimension"))
+        name = humanize_name(dim.get("name", "field"))
         questions.append(f"How does performance break down by {name.lower()}?")
     if not questions:
         questions = [
@@ -133,9 +133,9 @@ def build_glossary(metrics: list[dict], dimensions: list[dict]) -> str:
     rows = [
         "| Term | Definition |",
         "|------|------------|",
-        "| Semantic Layer | The governed set of metric and dimension definitions that ensures everyone uses the same trusted numbers |",
+        "| Semantic Layer | The governed set of metric and field definitions that ensures everyone uses the same trusted numbers |",
         "| Metric | A calculated business number defined once and used everywhere |",
-        "| Dimension | A way to group or filter data for analysis |",
+        "| Field | A way to group or filter data for analysis |",
         "| Filter | A rule that limits which records are included in a metric |",
     ]
     for metric in metrics:
@@ -143,8 +143,8 @@ def build_glossary(metrics: list[dict], dimensions: list[dict]) -> str:
         desc = metric.get("description") or expr_to_plain(metric.get("expr", ""))
         rows.append(f"| {name} | {desc} |")
     for dim in dimensions:
-        name = humanize_name(dim.get("name", "dimension"))
-        desc = dim.get("description") or f"A dimension for grouping by {name.lower()}"
+        name = humanize_name(dim.get("name", "field"))
+        desc = dim.get("description") or f"A field for grouping by {name.lower()}"
         rows.append(f"| {name} | {desc} |")
     return "\n".join(rows)
 
@@ -176,11 +176,11 @@ Version 0.1 (draft) | {date_str}
 
 ### Introduction
 
-This guide explains the {layer_name} semantic layer in plain English. It translates governed metric and dimension definitions into language you can use in AI/BI Genie, dashboards, and reports.
+This guide explains the {layer_name} semantic layer in plain English. It translates governed metric and field definitions into language you can use in AI/BI Genie, dashboards, and reports.
 
 ### About This Document
 
-This document describes the business meaning of each metric, dimension, and filter in the {layer_name} semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity.
+This document describes the business meaning of each metric, field, and filter in the {layer_name} semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity.
 
 ### Intended Audience
 
@@ -194,7 +194,7 @@ This guide is intended for the following audiences:
 
 This document uses the following typographical conventions:
 
-- **Bold** indicates a metric name, dimension name, or defined term at first use
+- **Bold** indicates a metric name, field name, or defined term at first use
 - Tables summarize metrics and glossary entries
 - Bulleted lists present related options or benefits
 - Numbered lists present sequences, procedures, or ranked examples
@@ -216,7 +216,7 @@ The semantic layer provides the following benefits:
 - See accurate numbers instantly, without waiting on the data team
 - Trust that dashboards and reports use the same definitions
 - Ask natural-language questions backed by governed metrics
-- Explore by dimension with confidence
+- Explore by field with confidence
 
 ## Key Metrics
 
@@ -236,7 +236,7 @@ The following table summarizes the key metrics:
 
 {build_metric_sections(metrics)}
 
-## Dimensions and Filters
+## Fields and Filters
 
 ### Objective
 
@@ -244,13 +244,13 @@ The purpose of this chapter is to explain how you can slice and filter metrics.
 
 ### Overview
 
-Dimensions let you break metrics apart. Filters narrow the data to what you care about.
+Fields let you break metrics apart. Filters narrow the data to what you care about.
 
-### Available Dimensions
+### Available Fields
 
-You can analyze metrics using the following dimensions:
+You can analyze metrics using the following fields:
 
-{build_dimension_sections(dimensions)}
+{build_field_sections(dimensions)}
 
 ### Default Filters
 
@@ -291,14 +291,14 @@ Follow these steps:
 1. Ask questions in everyday language
 2. Name the metric you want
 3. Add how you want it broken down
-4. Start simple, then add dimensions
+4. Start simple, then add fields
 
 ### In Dashboards and Reports
 
 Apply the semantic layer as follows:
 
 - Pin headline metrics as key performance indicators
-- Use time dimensions on trend charts
+- Use time fields on trend charts
 - Add category or region filters for self-service exploration
 
 ### In Self-Service Exploration
@@ -306,7 +306,7 @@ Apply the semantic layer as follows:
 Follow this workflow:
 
 1. Pick a metric
-2. Choose one or two dimensions
+2. Choose one or two fields
 3. Set a date range
 4. Compare periods using the same definitions every time
 

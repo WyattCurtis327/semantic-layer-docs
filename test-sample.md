@@ -14,7 +14,7 @@ Version 1.0 | July 2026
 1. Preface
 2. Understanding the Semantic Layer
 3. Key Metrics
-4. Dimensions and Filters
+4. Fields and Filters
 5. Common Questions
 6. Using the Semantic Layer
 7. Glossary
@@ -24,11 +24,11 @@ Version 1.0 | July 2026
 
 ### Introduction
 
-This guide explains the Sales Performance semantic layer in plain English. It translates governed metric and dimension definitions into language you can use in AI/BI Genie, dashboards, and reports. You do not need to know SQL, YAML, or data pipeline details to use this document.
+This guide explains the Sales Performance semantic layer in plain English. It translates governed metric and field definitions into language you can use in AI/BI Genie, dashboards, and reports. You do not need to know SQL, YAML, or data pipeline details to use this document.
 
 ### About This Document
 
-This document describes the business meaning of each metric, dimension, and filter in the Sales Performance semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity, while keeping a friendly, benefit-focused tone.
+This document describes the business meaning of each metric, field, and filter in the Sales Performance semantic layer. It follows The Open Group Technical Publications Style Guide for structure and clarity, while keeping a friendly, benefit-focused tone.
 
 The body is organized into chapters. Each chapter covers one main topic. Sections use numbered headings. Lists are introduced with a lead-in phrase and a colon. Terms are defined on first use and collected in the Glossary.
 
@@ -44,7 +44,7 @@ This guide is intended for the following audiences:
 
 This document uses the following typographical conventions:
 
-- **Bold** indicates a metric name, dimension name, or defined term at first use
+- **Bold** indicates a metric name, field name, or defined term at first use
 - Tables summarize metrics and glossary entries
 - Bulleted lists present related options or benefits
 - Numbered lists present sequences, procedures, or ranked examples
@@ -130,7 +130,7 @@ The following table summarizes the key metrics:
 
 **Example question:** How many orders did we complete in the West region last week?
 
-## Dimensions and Filters
+## Fields and Filters
 
 ### Objective
 
@@ -138,11 +138,11 @@ The purpose of this chapter is to explain how you can slice and filter sales met
 
 ### Overview
 
-Dimensions let you break metrics apart. Filters narrow the data to what you care about. Together, they control how you view revenue and order activity.
+Fields let you break metrics apart. Filters narrow the data to what you care about. Together, they control how you view revenue and order activity.
 
-### Available Dimensions
+### Available Fields
 
-You can analyze metrics using the following dimensions:
+You can analyze metrics using the following fields:
 
 #### Order Date
 
@@ -205,7 +205,7 @@ The purpose of this chapter is to describe how you can access and use these metr
 
 ### Overview
 
-You can use the semantic layer in chat interfaces, dashboards, and self-service exploration. The approach is the same in each case: pick a metric, add dimensions, and set a date range.
+You can use the semantic layer in chat interfaces, dashboards, and self-service exploration. The approach is the same in each case: pick a metric, add fields, and set a date range.
 
 ### In AI/BI Genie or Chat Interfaces
 
@@ -214,7 +214,7 @@ Follow these steps:
 1. Ask questions in everyday language
 2. Name the metric you want, such as revenue or orders
 3. Add how you want it broken down, such as by region or by month
-4. Start simple, then add dimensions, for example total revenue by product category last quarter
+4. Start simple, then add fields, for example total revenue by product category last quarter
 
 ### In Dashboards and Reports
 
@@ -229,7 +229,7 @@ Apply the semantic layer as follows:
 Follow this workflow:
 
 1. Pick a metric
-2. Choose one or two dimensions
+2. Choose one or two fields
 3. Set a date range
 4. Compare periods using the same definitions every time
 5. Share views knowing teammates see identical numbers
@@ -241,7 +241,7 @@ The following table defines terms used in this guide:
 | Term | Definition |
 |------|------------|
 | Completed Order | A customer purchase that finished successfully. Only these count toward your metrics |
-| Dimension | A way to group or filter data, such as date, product category, or region |
+| Field | A way to group or filter data, such as date, product category, or region |
 | Discount | A price reduction applied to an order. Subtracted when calculating Net Revenue |
 | Filter | A rule that limits which records are included. By default, only completed orders are counted |
 | Metric | A calculated business number, such as Total Revenue or Order Count, defined once and used everywhere |
@@ -250,7 +250,7 @@ The following table defines terms used in this guide:
 | Product Category | A high-level grouping that organizes products for reporting and analysis |
 | Region | A sales territory or geographic area used to attribute and compare performance |
 | Return | Money refunded when a customer sends a product back. Subtracted when calculating Net Revenue |
-| Semantic Layer | The governed set of metric and dimension definitions that ensures everyone uses the same trusted numbers |
+| Semantic Layer | The governed set of metric and field definitions that ensures everyone uses the same trusted numbers |
 | Total Revenue | The full dollar value of completed orders before discounts and returns |
 
 ## Getting Help
@@ -259,6 +259,6 @@ If you need assistance, use the following guidance:
 
 - If a metric looks wrong, confirm your date range, region filter, and that you are comparing completed orders only
 - If you need a number not in this guide, ask your data team whether a governed metric already exists before building a one-off calculation
-- If you want this guide updated, request additions when new metrics or dimensions are published to the semantic layer
+- If you want this guide updated, request additions when new metrics or fields are published to the semantic layer
 
 Your sales numbers should feel simple, trustworthy, and ready when you need them. This guide is here to make that happen.

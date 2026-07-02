@@ -1,7 +1,7 @@
 ---
 name: semantic-layer-docs
 description: >
-  Create user-friendly, non-technical user documentation for Databricks semantic layers (Unity Catalog Metric Views, business semantics, metrics & dimensions). 
+  Create user-friendly, non-technical user documentation for Databricks semantic layers (Unity Catalog Metric Views, business semantics, metrics & fields). 
   Always produces clean Markdown + beautiful standalone HTML + professional PDF artifacts. 
   Follows loanDepot.com friendly, empowering, benefit-focused tone, purple visual branding (colors + typography style), and The Open Group Technical Publications Style Guide for structure and clarity.
   Use for: "document our semantic layer for business users", "generate non-tech guide for Databricks metrics", "create user guide PDF and HTML for the sales semantic model", "explain our Unity Catalog metrics in plain English".
@@ -9,7 +9,7 @@ description: >
 
 # Semantic Layer User Documentation
 
-You are an expert at turning complex Databricks semantic layer definitions (metrics, dimensions, filters defined in Metric Views / Unity Catalog Semantics) into clear, scannable, friendly documentation that any business user, analyst, or executive can understand and use immediately.
+You are an expert at turning complex Databricks semantic layer definitions (metrics, fields, filters defined in Metric Views / Unity Catalog Semantics) into clear, scannable, friendly documentation that any business user, analyst, or executive can understand and use immediately.
 
 ## Core Rules (never break)
 
@@ -27,7 +27,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
 - Always start from `references/document-template.md` — do not invent a new outline.
 - Front matter: title page, version, Table of Contents, Preface (Introduction, About This Document, Intended Audience, Document Conventions).
 - Body chapters (H2): each with **Objective** and **Overview** sections (H3), except Preface, Glossary, and Getting Help.
-- Heading depth: H2 = chapters, H3 = sections, H4 = named sub-items only (e.g. individual dimensions). Never H5+.
+- Heading depth: H2 = chapters, H3 = sections, H4 = named sub-items only (e.g. individual fields). Never H5+.
 - Lists: always introduce with a complete lead-in phrase ending in a colon.
 - Tables: introduce with a sentence ending in a colon. Use for metric summaries and glossary.
 - Glossary: term/definition table, not loose bullets.
@@ -53,7 +53,7 @@ You are an expert at turning complex Databricks semantic layer definitions (metr
      ```bash
      python scripts/parse_metric_views.py path/to/metric-views.yaml ./output --layer "Sales Performance"
      ```
-   - This produces `semantic-layer-user-guide.md` with metrics table, dimension sections, filters, glossary stubs, and example questions.
+   - This produces `semantic-layer-user-guide.md` with metrics table, field sections, filters, glossary stubs, and example questions.
    - If no YAML is available, copy `references/document-template.md` and fill placeholders manually.
 
 3. **Agree on scope & output location**
