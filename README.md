@@ -25,7 +25,7 @@ Rebuild HTML/PDF from Markdown after every edit.
 ## Workflow
 
 1. **Parse** Metric View YAML → draft Markdown skeleton  
-2. **Polish** tone (benefit-first, “you” language)  
+2. **Polish** tone (benefit-first, "you" language)  
 3. **Validate** with `validate_guide.py`  
 4. **Build** HTML + PDF with `build_artifacts.py`
 
@@ -42,6 +42,27 @@ Rebuild HTML/PDF from Markdown after every edit.
 | `examples/` | Worked example guide |
 | `templates/user-guide.html` | HTML shell |
 | `requirements.txt` | Python deps |
+
+## Quick start
+
+Requires **Python 3.10+** (validated on 3.13; scripts use modern type hints).
+
+```bash
+git clone https://github.com/WyattCurtis327/semantic-layer-docs.git
+cd semantic-layer-docs
+python3 -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python scripts/parse_metric_views.py references/example-metric-views.yaml ./output --layer "Sales Performance"
+python scripts/validate_guide.py ./output/semantic-layer-user-guide.md
+python scripts/build_artifacts.py ./output/semantic-layer-user-guide.md ./output
+```
+
+Optional strict validation (list lead-ins):
+
+```bash
+python scripts/validate_guide.py ./output/semantic-layer-user-guide.md --strict
+python scripts/validate_guide.py examples/sales-performance-guide.md --strict
+```
 
 ## Install
 
@@ -76,4 +97,4 @@ No secrets in the tree. Keep live Metric View exports and customer data out of g
 
 ## License / visibility
 
-Public repo (`WyattCurtis327/semantic-layer-docs`).
+MIT — see [`LICENSE`](LICENSE). Public repo (`WyattCurtis327/semantic-layer-docs`).
