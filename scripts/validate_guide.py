@@ -103,7 +103,13 @@ def validate_list_leadins(md_body: str) -> list[str]:
                     break
             if prev.startswith("#"):
                 continue
-            if prev and not prev.endswith(":"):
+            # Continuation of an existing list — Open Group requires a lead-in
+            # before the *first* item, not before every subsequent bullet.
+            if prev.startswith("- ") or re.match(r"^\d+\. ", prev):
+                continue
+            # "**Label:**" ends with "*", not ":"; strip trailing emphasis markers
+            lead = re.sub(r"[*_]+$", "", prev).rstrip()
+            if lead and not lead.endswith(":"):
                 errors.append(f"List at line {i + 1} may lack a lead-in ending with a colon")
                 errors.append(f"  Lead-in: {prev[:80]}")
     return errors[:6]
@@ -194,4 +200,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main()}

@@ -53,7 +53,7 @@ The following table summarizes the key metrics:
 
 **What it measures:** The sum of all order amounts from completed sales, before any discounts or returns are applied.
 
-**How you can use it:**
+**How you can use it**:
 
 - Track month-over-month and year-over-year growth
 - Compare performance across sales regions
@@ -65,7 +65,7 @@ The following table summarizes the key metrics:
 
 **What it measures:** Total Revenue minus discounts and returns. This is the money you actually retained from sales.
 
-**How you can use it:**
+**How you can use it**:
 
 - Compare net versus total revenue to spot discount or return pressure
 - Evaluate campaign effectiveness after promotional spend
@@ -77,7 +77,7 @@ The following table summarizes the key metrics:
 
 **What it measures:** The number of unique completed orders, with each customer purchase counted once.
 
-**How you can use it:**
+**How you can use it**:
 
 - Monitor sales activity trends independent of dollar amounts
 - Calculate average order value by dividing Net Revenue by Order Count

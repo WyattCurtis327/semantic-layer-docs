@@ -64,15 +64,15 @@ def build_metric_sections(metrics: list[dict]) -> str:
         sections.append(
             f"""### {name}
 
-**What it measures:** {desc}. {plain}.
+**What it measures**: {desc}. {plain}.
 
-**How you can use it:**
+**How you can use it**:
 
 - Track trends over time
 - Compare performance across regions or categories
 - Monitor results in dashboards and executive reports
 
-**Example question:** What was our {name.lower()} last month?
+**Example question**: What was our {name.lower()} last month?
 """
         )
     return "\n\n".join(sections) if sections else "_No metrics found in YAML._"
