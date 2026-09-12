@@ -87,10 +87,6 @@ python scripts/build_artifacts.py semantic-layer-user-guide.md ./output-folder
 
 See `SKILL.md` for the full agent workflow and `examples/` / `references/example-metric-views.yaml` for formats.
 
-## Branding note
-
-Tone and purple accents are **inspired by** public consumer-friendly product-doc patterns (including loanDepot.com marketing style). This repo is **not** an official loanDepot product, and it does **not** claim affiliation. Do not commit real customer or internal Metric View dumps — use illustrative samples only.
-
 ## Privacy
 
 No secrets in the tree. Keep live Metric View exports and customer data out of git.
